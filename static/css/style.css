@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center; /* Центрируем содержимое */
+}
+
+nav {
+    display: inline-block; /* Делаем элемент блочным, чтобы применить text-align: center */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Центрируем ссылки */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s; /* Плавный переход для hover эффекта */
+}
+
+nav ul li a:hover {
+    color: #ff7f50; /* Изменяем цвет при наведении */
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    padding: 5px;
+}
+
+div {
+    margin-top: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+input[type="text"] {
+    padding: 8px;
+    margin: 5px 0;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select{
+    padding: 8px;
+    margin: 5px 0;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button{
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type="text"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+    color: #999;
+}
+.choose_genre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.modal{
+
+    position: absolute;
+    top: 20%;
+    left: 29%;
+    background: white;
+
+    width: 40%;
+
+
+    padding: 20px;
+    border: 3px solid blue;
+    border-radius: 10px;
+    z-index: 2;
+}
+.close{
+    background-color: #007bff;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+

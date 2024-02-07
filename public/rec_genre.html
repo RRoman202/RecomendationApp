@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <title>Рекомендации фильмов</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Топ 10 фильмов</a></li>
+            <li><a href="/genre">Рекомендации по жанру</a></li>
+            <li><a href="/content">Рекомендации по контенту</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<h1>Рекомендации по жанру</h1>
+
+<div class="choose_genre">
+    <div>
+        <h2>По жанру</h2>
+        <form action="/genres_rec" method="get">
+            <select id="genre" name="genre">
+                {% for item in genres %}
+                    <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Поиск">
+        </form>
+    </div>
+    <div>
+        <h2>По схожести жанра фильма</h2>
+        <form action="/genrefilm_rec" method="get">
+            <input type="text" id="film_name" name="film_name" required oninput="getSuggestions()" list="suggestionsList" autocomplete="off" class="styled-input">
+            <datalist id="suggestionsList" class="styled-datalist"></datalist>
+            <input type="submit" value="Поиск">
+        </form>
+    </div>
+
+
+</div>
+
+
+{% if film_genre %}
+    <h2>Схоже с {{ film_genre }} по жанрам</h2>
+{% endif %}
+{% if genre %}
+    <h2>Рекомендации по жанру {{ genre }}</h2>
+{% endif %}
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Название фильма</th>
+                <th>Дата выхода</th>
+                <th>Рейтинг</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if films %}
+                {% for f in films%}
+                    <tr>
+                        <td>{{ f[0] }}</td>
+                        <td>{{ f[2] }}</td>
+                        <td>{{ f[1] }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<script src="{{ url_for('static', path='/js/script.js') }}"></script>
+</body>
+</html>
